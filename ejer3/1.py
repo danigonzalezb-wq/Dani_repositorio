@@ -9,11 +9,14 @@ def mostrar_menu():
 def ingreso_usuario(dicc):
    #nombre_usuario
     nombre_usuario =input("ingrese nombre: ")
+    sexo_usuario=input("ingrese su genero(F/M): ")
+    contraseña_usuario=input("Ingrese su contraseña")
+
     if nombre_usuario == " ":
         print("El nombre no puede estar vacio")
         return
     
-    if nombre_usuario in ingreso_usuario:
+    for nombre_usuario in ingreso_usuario(dicc):
         print("El alumno ya existe")
         return
     
@@ -24,7 +27,7 @@ def ingreso_usuario(dicc):
     nombre_usuario
     
     # sexo_usuario
-    sexo_usuario=input("ingrese su genero(F/M): ").strip()
+    
 
     if sexo_usuario=="F":
 
@@ -36,10 +39,10 @@ def ingreso_usuario(dicc):
         return
     
     # contraseña_usuario
-    contraseña_usuario=input("Ingrese su contraseña").strip()
+    
 
     if contraseña_usuario==" ":
-        print("ingrese contraseña")
+        print("ingrese contraseña: ")
     else:
         print("contraseña agregada ")
 
@@ -54,7 +57,7 @@ def ingreso_usuario(dicc):
    
 def buscar_usuario():
    buscar=input("ingrese usuario a buscar: ")
-   for nombre_usuario in ingreso_usuario:
+   for nombre_usuario in ingreso_usuario(dicc):
        nombre_usuario
 
 def eliminar_usuario():
@@ -77,19 +80,16 @@ while True:
         
         
     if op==1:
-         
          ingreso_usuario(dicc)
-
     elif op==2:
-            buscar_usuario
-            print
+         buscar_usuario()
     elif op==3:
-            eliminar_usuario()
+        eliminar_usuario()
     elif op==4:
-            print("saliendo")
-            break
+        print("saliendo")
+        break
     else:
-            print("Opcion no valida, intente nuevamente")
+        print("Opcion no valida, intente nuevamente")
 
         
 
