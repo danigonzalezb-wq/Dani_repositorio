@@ -18,7 +18,7 @@ def imprimir_tareas(lista_tareas):
             print(f"-{tareas}")
 
 tareas=[]
-
+op=0
 while True:
     mostrar_menu()
     try:
@@ -31,12 +31,15 @@ while True:
     if op==1:
         Agregar=input().strip().capitalize()
         tareas.append(Agregar)
+        print("tarea agregada")
 
     elif op==2:
         quitar=input().strip().capitalize
         if quitar in tareas:
             print("tarea eliminada")
             tareas.remove(quitar)
+        else:
+            print("tarea no esta agregada a la lista")
 
     elif op==3:
         imprimir_tareas(tareas)
